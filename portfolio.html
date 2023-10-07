@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Hello, world!</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<meta name="description" content="" />
+	<link rel="stylesheet" type="text/css" href="style.css" />
+	<link rel="icon" href="favicon.png">
+</head>
+<body>
+	<div class="header">
+		<img src="assets/logo.jpeg" id="logo">
+		<nav>
+			<a href="index.html">Home</a>
+			<a href="portfolio.html">Portfolio</a>
+			<a href="form.html">Request a Quote</a>
+		</nav>
+	</div>
+
+	<div class="portfolioImages">
+		
+		<iframe id="pano2" allowFullScreen="true" allow="accelerometer; magnetometer; gyroscope" src="https://panoraven.com/en/embed/46UMq9RLeg"></iframe>
+		
+		<img src="assets/photos/04.png" id="image1">
+		<img src="assets/photos/06.png" id="image2">
+		<img src="assets/photos/07.png" id="image3">
+		<img src="assets/photos/08.png" id="image4">
+		<img src="assets/photos/09.png" id="image5">
+		<img src="assets/photos/10.png" id="image6">
+		<img src="assets/photos/11.png" id="image7">
+		<img src="assets/photos/12.png" id="image8">
+		<img src="assets/photos/13.png" id="image9">
+
+	</div>
+
+	<div class="overlay">
+        <span class="close-button">×</span>
+
+        <div class="slideshow-container">
+
+        <div class="mySlides fade">
+          <img src="assets/photos/04.png" style="width:100%">
+        </div>
+
+        <div class="mySlides fade">
+          <img src="assets/photos/06.png" style="width:100%">
+        </div>
+
+        <div class="mySlides fade">
+          <img src="assets/photos/07.png" style="width:100%">
+        </div>
+
+        <div class="mySlides fade">
+          <img src="assets/photos/08.png" style="width:100%">
+        </div>
+
+        <div class="mySlides fade">
+          <img src="assets/photos/09.png" style="width:100%">
+        </div>
+
+        <div class="mySlides fade">
+          <img src="assets/photos/10.png" style="width:100%">
+        </div>
+
+        <div class="mySlides fade">
+          <img src="assets/photos/11.png" style="width:100%">
+        </div>
+
+        <div class="mySlides fade">
+          <img src="assets/photos/12.png" style="width:100%">
+        </div>
+
+        <div class="mySlides fade">
+          <img src="assets/photos/13.png" style="width:100%">
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+
+        </div>
+        <br>
+
+        <div style="text-align:center">
+          <span class="dot" onclick="currentSlide(1)"></span> 
+          <span class="dot" onclick="currentSlide(2)"></span> 
+          <span class="dot" onclick="currentSlide(3)"></span> 
+          <span class="dot" onclick="currentSlide(4)"></span> 
+          <span class="dot" onclick="currentSlide(5)"></span> 
+          <span class="dot" onclick="currentSlide(6)"></span> 
+          <span class="dot" onclick="currentSlide(7)"></span> 
+          <span class="dot" onclick="currentSlide(8)"></span> 
+          <span class="dot" onclick="currentSlide(9)"></span> 
+        </div>
+    </div>
+
+    <script>
+        document.querySelector('.close-button').addEventListener('click', function () {
+            document.querySelector('.overlay').style.display = 'none';
+        });
+    </script>
+
+    <script>
+        // Get references to the overlay, close button, and slides
+        const overlay = document.querySelector('.overlay');
+        const closeButton = document.querySelector('.close-button');
+        const slides = document.getElementsByClassName('mySlides');
+
+        // Add click event listeners to each image
+	   document.getElementById('image1').addEventListener('click', function () {
+			const slideIndex = this.getAttribute('data-slide-index');
+			showSlides(parseInt(slideIndex));
+			document.querySelector('.overlay').style.display = 'block'; // Show the overlay
+		});
+
+		document.getElementById('image2').addEventListener('click', function () {
+			const slideIndex = this.getAttribute('data-slide-index');
+			showSlides(parseInt(slideIndex));
+			document.querySelector('.overlay').style.display = 'block'; // Show the overlay
+		});
+
+		document.getElementById('image3').addEventListener('click', function () {
+			const slideIndex = this.getAttribute('data-slide-index');
+			showSlides(parseInt(slideIndex));
+			document.querySelector('.overlay').style.display = 'block'; // Show the overlay
+		});
+
+	   document.getElementById('image4').addEventListener('click', function () {
+			const slideIndex = this.getAttribute('data-slide-index');
+			showSlides(parseInt(slideIndex));
+			document.querySelector('.overlay').style.display = 'block'; // Show the overlay
+		});
+
+		document.getElementById('image5').addEventListener('click', function () {
+			const slideIndex = this.getAttribute('data-slide-index');
+			showSlides(parseInt(slideIndex));
+			document.querySelector('.overlay').style.display = 'block'; // Show the overlay
+		});
+
+		document.getElementById('image6').addEventListener('click', function () {
+			const slideIndex = this.getAttribute('data-slide-index');
+			showSlides(parseInt(slideIndex));
+			document.querySelector('.overlay').style.display = 'block'; // Show the overlay
+		});
+
+	   document.getElementById('image7').addEventListener('click', function () {
+			const slideIndex = this.getAttribute('data-slide-index');
+			showSlides(parseInt(slideIndex));
+			document.querySelector('.overlay').style.display = 'block'; // Show the overlay
+		});
+
+		document.getElementById('image8').addEventListener('click', function () {
+			const slideIndex = this.getAttribute('data-slide-index');
+			showSlides(parseInt(slideIndex));
+			document.querySelector('.overlay').style.display = 'block'; // Show the overlay
+		});
+
+		document.getElementById('image9').addEventListener('click', function () {
+			const slideIndex = this.getAttribute('data-slide-index');
+			showSlides(parseInt(slideIndex));
+			document.querySelector('.overlay').style.display = 'block'; // Show the overlay
+		});
+
+
+        // Add click event listener to close button to hide the overlay
+        closeButton.addEventListener('click', function () {
+            overlay.style.display = 'none';
+        });
+
+        // The rest of your slideshow JavaScript code
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {slideIndex = 1}    
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";  
+            dots[slideIndex-1].className += " active";
+        }
+    </script>
+</body>
+</html>

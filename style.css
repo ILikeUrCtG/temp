@@ -1,0 +1,207 @@
+body {
+	margin: 0;
+}
+
+.header {
+	display: flex;
+	background: orange;
+}
+
+#logo {
+	height: 70px;
+}
+
+#video1 {
+	width: 100%;
+	z-index: -1;
+}
+
+#pano1 {
+	flex: 1 100%;
+}
+
+nav {
+	margin: 20px;
+}
+
+nav a {
+	padding: 10px;
+}
+
+.homeFlexBox {
+	display: flex;
+}
+
+h1 {
+	font-size: 60px;
+	color: white;
+	position: absolute;
+	left: 0; 
+	right: 0; 
+	margin: 100px auto 0 auto; 
+	width: 800px; /* Need a specific value to work */
+}
+
+#arrow {
+	position: absolute;
+	left: 0; 
+	right: 0; 
+	margin: 60vh auto 0 auto; 
+	width: 300px; /* Need a specific value to work */
+}
+
+.homeImages {
+	display: flex;
+	height: 45vh;
+	justify-content: space-evenly;
+	margin-top: 4vh;
+}
+
+.homeImages img {
+	margin: 20px;
+	border-radius: 10px;
+}
+
+.portfolioImages {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+}
+
+.portfolioImages img{
+	height: 40vh;
+	margin: 20px;
+	border-radius: 10px;
+}
+
+#video2 {
+	height: 40vh;
+	margin: 20px;
+	border-radius: 10px;
+}
+
+#pano2 {
+	height: 40vh;
+	width: 90vw;
+	margin: 20px;
+	border-radius: 10px;
+	border: 1px solid white;
+}
+
+.mapFormFlex {
+	display: flex;
+}
+
+.map embed{
+	width: 900px;
+	height: 500px;
+}
+
+.form {
+	width: 100%
+}
+
+.overlay {
+    display: none; /* Initially hide the overlay */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    background-color: rgba(0, 0, 0, 0.9);;
+    width: 100%;
+}
+
+.close-button {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	cursor: pointer;
+	font-size: 20px;
+	background: white;
+	padding: 5px 12px 5px 12px;
+	border-radius: 10px;
+
+  /* Customize the appearance of the close button */
+}
+
+/* Slideshow container */
+.slideshow-container {
+	max-width: 1000px;
+	position: relative;
+	margin: auto;
+	padding: 80px 0 80px 0;
+}
+
+.slideshow-container img {
+	border-radius: 10px;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+	right: 0;
+	border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+	background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+	color: #f2f2f2;
+	font-size: 15px;
+	padding: 8px 12px;
+	position: absolute;
+	bottom: 8px;
+	width: 100%;
+	text-align: center;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+	cursor: pointer;
+	height: 15px;
+	width: 15px;
+	margin: 0 2px;
+	background-color: #bbb;
+	border-radius: 50%;
+	display: inline-block;
+	transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+	background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+	animation-name: fade;
+	animation-duration: 1.5s;
+}
+
+@keyframes fade {
+	from {opacity: .4} 
+	to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+	.prev, .next,.text {font-size: 11px}
+}

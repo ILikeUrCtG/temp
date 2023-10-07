@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Hello, world!</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<meta name="description" content="" />
+	<link rel="stylesheet" type="text/css" href="style.css" />
+	<link rel="icon" href="favicon.png">
+</head>
+<body>
+	<div class="header">
+		<img src="assets/logo.jpeg" id="logo">
+		<nav>
+			<a href="index.html">Home</a>
+			<a href="portfolio.html">Portfolio</a>
+			<a href="form.html">Request a Quote</a>
+		</nav>
+	</div>
+
+	<h1>Your World From Above</h1>
+	<img src="assets/arrow.gif" id="arrow">
+
+	<div class="video">
+		<video loop muted autoplay id="video1">
+			<source src="assets/video1.mp4" type="video/mp4">
+		</video>
+	</div>
+
+	<div class="homeImages">
+		<img src="assets/photos/01.png" id="image1">
+		<img src="assets/photos/02.png" id="image2">
+		<img src="assets/photos/05.png" id="image3">
+	</div>
+
+	<div class="homeFlexBox">
+		<div id="pano1">
+			<iframe width="90%" height="500px" allowFullScreen="true" allow="accelerometer; magnetometer; gyroscope" style="display:block; margin:20px auto; border:0 none; max-width:880px;border-radius:8px; box-shadow: 0 1px 1px rgba(0,0,0,0.11),0 2px 2px rgba(0,0,0,0.11),0 4px 4px rgba(0,0,0,0.11),0 6px 8px rgba(0,0,0,0.11),0 8px 16px rgba(0,0,0,0.11);" src="https://panoraven.com/en/embed/uMFctVfNrg"></iframe>
+		</div>
+		<div id="aboutMe">
+			<h2>Hello There!</h2>
+            <p>
+                My name is Ryan Stein, and I have had an interest in drones ever since I first got one when I was 11 years old. Ever since, I have taken a keen interest in the field of drone photography and videography. I currently work with L & B Travel, creating drone travel videos of all kinds.
+                <ul>
+                    <li>Although I have recently started this business, I have over 50 hours of drone flight experience and would like to expand my horizons to all drone photography needs.</li>
+                    <li>I provide drone photography services for all purposes to all those within a 40-mile radius of the Encino area of Los Angeles.</li>
+                    <li>I will make sure I capture the shots you need and add in some of my own extra shots so you won’t miss out on a thing.</li>
+                </ul>
+                Click on the “Request a Quote” tab and fill out the form there to request a quote.
+            </p>
+		</div>
+	</div>
+
+	<div class="overlay">
+        <span class="close-button">×</span>
+
+        <div class="slideshow-container">
+
+        <div class="mySlides fade">
+          <img src="assets/photos/01.png" style="width:100%">
+        </div>
+
+        <div class="mySlides fade">
+          <img src="assets/photos/02.png" style="width:100%">
+        </div>
+
+        <div class="mySlides fade">
+          <img src="assets/photos/05.png" style="width:100%">
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+
+        </div>
+        <br>
+
+        <div style="text-align:center">
+          <span class="dot" onclick="currentSlide(1)"></span> 
+          <span class="dot" onclick="currentSlide(2)"></span> 
+          <span class="dot" onclick="currentSlide(3)"></span> 
+        </div>
+    </div>
+
+    <script>
+        document.querySelector('.close-button').addEventListener('click', function () {
+            document.querySelector('.overlay').style.display = 'none';
+        });
+    </script>
+
+    <script>
+        // Get references to the overlay, close button, and slides
+        const overlay = document.querySelector('.overlay');
+        const closeButton = document.querySelector('.close-button');
+        const slides = document.getElementsByClassName('mySlides');
+
+        // Add click event listeners to each image
+	   document.getElementById('image1').addEventListener('click', function () {
+			const slideIndex = this.getAttribute('data-slide-index');
+			showSlides(parseInt(slideIndex));
+			document.querySelector('.overlay').style.display = 'block'; // Show the overlay
+		});
+
+		document.getElementById('image2').addEventListener('click', function () {
+			const slideIndex = this.getAttribute('data-slide-index');
+			showSlides(parseInt(slideIndex));
+			document.querySelector('.overlay').style.display = 'block'; // Show the overlay
+		});
+
+		document.getElementById('image3').addEventListener('click', function () {
+			const slideIndex = this.getAttribute('data-slide-index');
+			showSlides(parseInt(slideIndex));
+			document.querySelector('.overlay').style.display = 'block'; // Show the overlay
+		});
+
+
+        // Add click event listener to close button to hide the overlay
+        closeButton.addEventListener('click', function () {
+            overlay.style.display = 'none';
+        });
+
+        // The rest of your slideshow JavaScript code
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {slideIndex = 1}    
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";  
+            dots[slideIndex-1].className += " active";
+        }
+    </script>
+</body>
+</html>
