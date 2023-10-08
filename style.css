@@ -4,11 +4,12 @@ body {
 
 .header {
 	display: flex;
-	background: orange;
+	background: #ec6342;
 }
 
 #logo {
 	height: 70px;
+	outline: 5px solid white;
 }
 
 #video1 {
@@ -21,11 +22,12 @@ body {
 }
 
 nav {
-	margin: 20px;
+	margin: 25px;
 }
 
 nav a {
 	padding: 10px;
+	color: white;
 }
 
 .homeFlexBox {
@@ -33,13 +35,13 @@ nav a {
 }
 
 h1 {
-	font-size: 60px;
+	font-size: 70px;
 	color: white;
 	position: absolute;
 	left: 0; 
 	right: 0; 
-	margin: 100px auto 0 auto; 
-	width: 800px; /* Need a specific value to work */
+	margin: 120px auto 0 auto; 
+	width: 900px; /* Need a specific value to work */
 }
 
 #arrow {
@@ -93,12 +95,16 @@ h1 {
 }
 
 .map embed{
-	width: 900px;
 	height: 500px;
+	width: 100%
+}
+.map p {
+	width: 100%;
+	margin: 10px;
 }
 
 .form {
-	width: 100%
+	width: 230vw;
 }
 
 .overlay {

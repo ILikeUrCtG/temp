@@ -10,7 +10,7 @@
 </head>
 <body>
 	<div class="header">
-		<img src="assets/logo.jpeg" id="logo">
+		<a href="index.html" id="logolink"><img src="assets/logo.jpeg" id="logo"></a>
 		<nav>
 			<a href="index.html">Home</a>
 			<a href="portfolio.html">Portfolio</a>
@@ -88,6 +88,7 @@
     </script>
 
     <script>
+        let slideIndex = 1;
         // Get references to the overlay, close button, and slides
         const overlay = document.querySelector('.overlay');
         const closeButton = document.querySelector('.close-button');
@@ -95,19 +96,16 @@
 
         // Add click event listeners to each image
 	   document.getElementById('image1').addEventListener('click', function () {
-			const slideIndex = this.getAttribute('data-slide-index');
 			showSlides(parseInt(slideIndex));
 			document.querySelector('.overlay').style.display = 'block'; // Show the overlay
 		});
 
 		document.getElementById('image2').addEventListener('click', function () {
-			const slideIndex = this.getAttribute('data-slide-index');
 			showSlides(parseInt(slideIndex));
 			document.querySelector('.overlay').style.display = 'block'; // Show the overlay
 		});
 
 		document.getElementById('image3').addEventListener('click', function () {
-			const slideIndex = this.getAttribute('data-slide-index');
 			showSlides(parseInt(slideIndex));
 			document.querySelector('.overlay').style.display = 'block'; // Show the overlay
 		});
@@ -119,7 +117,6 @@
         });
 
         // The rest of your slideshow JavaScript code
-        let slideIndex = 1;
         showSlides(slideIndex);
 
         function plusSlides(n) {
